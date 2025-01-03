@@ -1,9 +1,14 @@
 // app/kys/page.js
 "use client";
+import KYSTestExplainer from '@/src/components/kys/kys5';
+import TestimonialsSection from '@/src/components/kys/kys6';
 import React from 'react';
+import KYS7 from '@/src/components/kys/kys7';
+import FAQPage from '@/src/components/kys/kys8';
 
 const Kys = () => {
   return (
+    <>
     <div className='px-6 md:px-20 lg:px-40'>
 
 
@@ -25,7 +30,7 @@ const Kys = () => {
      
     
       <div className="w-full md:w-1/2 p-3 md:p-8 bg-white">
-        <img src="/Home/kys.jpg" alt="Image" className="w-full h-auto rounded-lg shadow-md" />
+        <img src="/images/kys/kys1.svg" alt="Image" className="w-full h-auto rounded-lg shadow-md" />
       </div>
     
 
@@ -57,9 +62,14 @@ const Kys = () => {
      </div>
     </div>
 
-
+  
 
     </div>
+    <KYSTestExplainer/>
+    <TestimonialsSection/>
+    <KYS7/>
+    <FAQPage/>
+    </>
   );
 };
 
