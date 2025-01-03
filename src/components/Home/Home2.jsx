@@ -1,5 +1,5 @@
 
-
+import Link from "next/link"
 function Home2() {
   return (
     <div className="flex justify-center items-center px-4 md:px-8 lg:px-16">
@@ -18,7 +18,7 @@ function Home2() {
       </div>
     
       <div className="w-full md:w-1/4 flex flex-col justify-center items-center p-4">
-        <button className="px-4 py-2 bg-[#0B5E41] text-white rounded-full mb-4">Test Yourself Now</button>
+        <Link href="*" className="px-4 py-2 bg-[#0B5E41] text-white rounded-full mb-4">Test Yourself Now</Link>
         <button className="px-4 py-2 bg-[#3B9B72] text-white rounded">Button 2</button>
       </div>
     
