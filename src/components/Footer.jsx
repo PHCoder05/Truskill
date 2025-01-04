@@ -15,7 +15,7 @@ const Footer = () => {
               <GraduationCap size={32} />
               <span className="text-xl font-semibold">TruSkill</span>
             </div>
-            <p className="text-sm mb-4">© {currentYear} Truskill Academy Pvt Ltd</p>
+            <p className="text-sm mb-4">© {currentYear} Truskill Academy</p>
             <div className="flex gap-4">
               <a href="#" className="hover:text-emerald-500 transition-colors">
                 <Linkedin size={20} />

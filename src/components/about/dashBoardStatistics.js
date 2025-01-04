@@ -31,7 +31,7 @@ const DashboardStatistics = () => {
         </h2>
         <div className="flex justify-center gap-6 flex-wrap">
           <img
-            src="/images/about/about_us_1.jpeg"
+            src="/images/about/dashboard.png"
             alt="Dashboard 1"
             className="rounded-lg shadow-md w-full sm:w-1/3"
           />
