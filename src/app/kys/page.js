@@ -18,6 +18,7 @@ const Kys = () => {
         <Kys1 />
         <Kys2 />
         <Kys3 />
+        <Kys4/>
 
         {/* Section 2 */}
         <div className='md:flex py-5 h-auto my-24 justify-between'>

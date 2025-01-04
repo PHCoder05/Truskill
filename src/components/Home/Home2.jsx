@@ -2,9 +2,9 @@
 import Link from "next/link"
 function Home2() {
   return (
-    <div className="flex justify-center items-center px-4 md:px-8 lg:px-16">
+    <div className="flex justify-center items-center px-4 md:px-8 lg:px-16 w-full">
 
-    <div className="flex flex-col md:flex-row w-full max-w-6xl shadow-lg rounded-lg border-[#e9e9e900] overflow-hidden">
+    <div className="flex flex-col md:flex-row w-full  shadow-lg rounded-lg overflow-hidden border-2 border-[#504c4c33]">
     
       <div className="w-full md:w-1/2 p-5 bg-white">
         <p className="text-gray-600">
@@ -18,8 +18,12 @@ function Home2() {
       </div>
     
       <div className="w-full md:w-1/4 flex flex-col justify-center items-center p-4">
-        <Link href="*" className="px-4 py-2 bg-[#0B5E41] text-white rounded-full mb-4">Test Yourself Now</Link>
-        <button className="px-4 py-2 bg-[#3B9B72] text-white rounded">Button 2</button>
+        <Link href="*" className=" px-2 py-2  md:px-4 md:py-2 bg-[#0B5E41] text-white rounded-full mb-4">Test Yourself Now</Link>
+        <div className="md:px-4 md:py-2 bg-white text-black rounded flex space-x-2">
+          <img src="Home/playbutton.png"></img>
+          <p>Learn About<br></br>
+          KYS in 2 mins</p>
+        </div>
       </div>
     
       <div className="w-full md:w-1/4 p-4 md:p-8 bg-white">

@@ -31,7 +31,7 @@ function Home6() {
   <div className="flex flex-col md:flex-row items-center h-auto py-10 justify-center space-x-6">
     <div className="flex md:w-1/3 items-center space-x-4">
       {/* Number Section */}
-      <div className="text-xl md:text-3xl font-bold text-gray-500">01</div>
+      <div className="text-xl  font-bold text-gray-500">01</div>
       {/* Text Section */}
       <div className="md:text-left">
         <p className="text-sm text-gray-700">Know where you stand</p>
