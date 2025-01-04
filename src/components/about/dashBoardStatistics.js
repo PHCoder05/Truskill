@@ -1,111 +1,74 @@
 'use client'
-import React, { useState } from "react";
+import { useState } from 'react';
+import Slider from 'react-slick';
+import Image from 'next/image';
 
-const statisticsImages = [
-  "/images/about/about_us_1.jpeg", // Replace with your first image path
-  "/images/about/about_us_2.jpeg", // Replace with your second image path
-  "/images/about/about_us_1.jpeg", // Replace with your third image path
-];
+export default function Home() {
+  const images = [
+    '/images/about/1.png',
+    '/images/about/2.png',
+    '/images/about/3.png',
+    '/images/about/1.png',
+    '/images/about/2.png',
+  ];
 
-const DashboardStatistics = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(2); // Default middle index
 
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? statisticsImages.length - 1 : prevIndex - 1
-    );
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === statisticsImages.length - 1 ? 0 : prevIndex + 1
-    );
+  const settings = {
+    centerMode: true,
+    infinite: true,
+    centerPadding: '0',
+    slidesToShow: 3,
+    speed: 500,
+    focusOnSelect: true,
+    beforeChange: (current, next) => {
+      setCurrentIndex(next); // Update the current index when the slide changes
+    },
+    prevArrow: (
+      <div className="slick-arrow slick-prev absolute top-1/2 left-0 transform -translate-y-1/2 z-10 text-3xl text-gray-700 cursor-pointer opacity-50 hover:opacity-100 transition-opacity">
+        ←
+      </div>
+    ),
+    nextArrow: (
+      <div className="slick-arrow slick-next absolute top-1/2 right-0 transform -translate-y-1/2 z-10 text-3xl text-gray-700 cursor-pointer opacity-50 hover:opacity-100 transition-opacity">
+        →
+      </div>
+    ),
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+        },
+      },
+    ],
   };
 
   return (
-    <div className="py-16 bg-[#FFFFFF]">
-      {/* Dashboard Preview Section */}
-      <div className="container mx-auto px-4 lg:px-20">
-        <h2 className="text-center text-3xl  text-gray-800 mb-8 font-poppins font-semibold">
-          Preview of Our Dashboard
-        </h2>
-        <div className="flex justify-center gap-6 flex-wrap">
-          <img
-            src="/images/about/dashboard.png"
-            alt="Dashboard 1"
-            className="rounded-lg shadow-md w-full sm:w-1/3"
-          />
-          <img
-            src="/images/about/about_us_2.jpeg"
-            alt="Dashboard 2"
-            className="rounded-lg shadow-md w-full sm:w-1/3"
-          />
-          <img
-            src="/images/about/about_us_1.jpeg"
-            alt="Dashboard 3"
-            className="rounded-lg shadow-md w-full sm:w-1/3"
-          />
-        </div>
-      </div>
-
-      {/* Statistics Section */}
-      <div className="container mx-auto px-4 lg:px-20 mt-16">
-        <h2 className="text-center text-3xl font-semibold text-gray-800 mb-8">
-          Statistics
-        </h2>
-        <div className="relative flex justify-center items-center">
-          {/* Left Arrow */}
-          <button
-            onClick={handlePrev}
-            className="absolute left-4 bg-white border border-gray-200 rounded-full p-2 shadow-md hover:shadow-lg transition-shadow"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="w-6 h-6 text-green-600"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15.75 19.5L8.25 12l7.5-7.5"
-              />
-            </svg>
-          </button>
-
-          {/* Statistics Image */}
-          <img
-            src={statisticsImages[currentIndex]}
-            alt={`Statistics ${currentIndex + 1}`}
-            className="rounded-lg shadow-md w-full sm:w-2/3"
-          />
-
-          {/* Right Arrow */}
-          <button
-            onClick={handleNext}
-            className="absolute right-4 bg-white border border-gray-200 rounded-full p-2 shadow-md hover:shadow-lg transition-shadow"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="w-6 h-6 text-green-600"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M8.25 4.5l7.5 7.5-7.5 7.5"
-              />
-            </svg>
-          </button>
-        </div>
+    <div className="p-2 bg-[#FFFFFF]">
+      <h1 className="text-2xl font-work text-center mb-6">Preview Of our Dashboard</h1>
+      <div className="relative w-full max-w-6xl mx-auto">
+        <Slider {...settings}>
+          {images.map((image, index) => (
+            <div key={index} className="flex justify-center items-center">
+              <div
+                className={`transition-all duration-500 ease-in-out transform ${
+                  index === currentIndex ? 'scale-125 rotate-2 shadow-2xl' : 'scale-90'
+                }`} // Apply larger scale and shadow to the center image
+              >
+                <Image
+                  src={image}
+                  alt={`image-${index}`}
+                  width={350}
+                  height={350}
+                  className="max-w-full object-cover rounded-lg"
+                />
+              </div>
+            </div>
+          ))}
+        </Slider>
       </div>
     </div>
   );
-};
-
-export default DashboardStatistics;
+}
