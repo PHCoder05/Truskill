@@ -4,7 +4,7 @@ function Home7() {
   return (
     <>
     
-<div className="flex flex-col justify-center items-center text-center px-6 mt-20">
+<div className="flex flex-col justify-center items-center text-center px-6 ">
   <p className="text-xs md:text-lg text-[#A7A7A7] ">
   Impact Created
   </p>

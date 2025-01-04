@@ -11,7 +11,7 @@ import Home7 from "../components/Home/Home7";
 function page() {
   return (
     <div>
-    <div className='px-6 md:px-20 lg:px-40'>
+    <div className='px-6 md:px-20 lg:px-40 bg-white'>
     <Home1/>
     <Home2/>
     <Home3/>

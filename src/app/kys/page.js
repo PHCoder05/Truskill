@@ -18,6 +18,8 @@ const Kys = () => {
         <Kys1 />
         <Kys2 />
         <Kys3 />
+        <Kys4 />
+        
         {/* Section 2 */}
         <div className="md:flex py-5 h-auto my-24 justify-between">
           <div className="w-full md:w-1/2 p-5">
@@ -36,6 +38,7 @@ const Kys = () => {
             <img src="/images/kys/kys1.svg" alt="Image" className="w-full h-auto rounded-lg shadow-md" />
           </div>
         </div>
+        
         {/* Section 3 */}
         <div className="md:flex py-5 h-auto my-24 justify-between">
           <div className="w-full md:w-1/2 p-5">
