@@ -1,28 +1,28 @@
-"use client";
-import KYSTestExplainer from '@/src/components/kys/kys5';
-import TestimonialsSection from '@/src/components/kys/kys6';
-import React from 'react';
-import Kys1 from '@/src/components/kys/Kys1';
-import Kys2 from '@/src/components/kys/Kys2';
-import Kys3 from '@/src/components/kys/Kys3';
-import Kys4 from '@/src/components/kys/Kys4';
-import KYS7 from '@/src/components/kys/kys7';
-import FAQPage from '@/src/components/kys/kys8';
+'use client'
+
+import KYSTestExplainer from '@/src/components/kys/kys5'
+import TestimonialsSection from '@/src/components/kys/kys6'
+import React from 'react'
+import Kys1 from '@/src/components/kys/Kys1'
+import Kys2 from '@/src/components/kys/Kys2'
+import Kys3 from '@/src/components/kys/Kys3'
+import Kys4 from '@/src/components/kys/Kys4'
+import KYS7 from '@/src/components/kys/kys7'
+import FAQPage from '@/src/components/kys/kys8'
 
 const Kys = () => {
   return (
-    <>
-      <div className='px-6 md:px-20 lg:px-40'>
-
+    <div className="w-full bg-white">
+      <div className="max-w-7xl mx-auto px-6 md:px-20 lg:px-40">
         {/* Section 1 */}
         <Kys1 />
         <Kys2 />
         <Kys3 />
-        <Kys4/>
-
+        <Kys4 />
+        
         {/* Section 2 */}
-        <div className='md:flex py-5 h-auto my-24 justify-between'>
-          <div className="w-full md:w-1/2 p-5 bg-white">
+        <div className="md:flex py-5 h-auto my-24 justify-between">
+          <div className="w-full md:w-1/2 p-5">
             <p className="text-gray-600">
               Know your self test
             </p>
@@ -34,14 +34,14 @@ const Kys = () => {
               product manager should have.
             </p>
           </div>
-          <div className="w-full md:w-1/2 p-3 md:p-8 bg-white">
+          <div className="w-full md:w-1/2 p-3 md:p-8">
             <img src="/images/kys/kys1.svg" alt="Image" className="w-full h-auto rounded-lg shadow-md" />
           </div>
         </div>
-
+        
         {/* Section 3 */}
-        <div className='md:flex py-5 h-auto my-24 justify-between'>
-          <div className="w-full md:w-1/2 p-5 bg-white">
+        <div className="md:flex py-5 h-auto my-24 justify-between">
+          <div className="w-full md:w-1/2 p-5">
             <p className="text-gray-600">
               Know your self test
             </p>
@@ -53,19 +53,20 @@ const Kys = () => {
               product manager should have.
             </p>
           </div>
-          <div className="w-full md:w-1/2 p-3 md:p-8 bg-white">
+          <div className="w-full md:w-1/2 p-3 md:p-8">
             <img src="/images/kys/kys2.png" alt="Image" className="w-full h-auto rounded-lg shadow-md" />
           </div>
         </div>
-
       </div>
+      
+      <div className="w-full">
+        <KYSTestExplainer />
+        <TestimonialsSection />
+        <KYS7 />
+        <FAQPage />
+      </div>
+    </div>
+  )
+}
 
-      <KYSTestExplainer />
-      <TestimonialsSection />
-      <KYS7 />
-      <FAQPage />
-    </>
-  );
-};
-
-export default Kys;
+export default Kys

@@ -23,9 +23,9 @@ export const metadata = {
 // Component
 export default function KYSTestExplainer() {
   return (
-    <main className="max-w-5xl mx-auto px-6 py-12">
+    <main className="max-w-5xl mx-auto px-6 py-12 bg-[#FFFFFF]">
       {/* Header */}
-      <div className="text-center mb-12">
+      <div className="text-center mb-12 bg-[#FFFFFF]">
         <span className="text-emerald-700 text-sm font-medium mb-2 block">
           About KYS
         </span>

@@ -1,223 +1,225 @@
-'use client'
-import React, { useState } from 'react';
-import { Phone, Mail, MapPin } from 'lucide-react';
+"use client";
 
-export default function ContactForm() {
-  const [loading, setLoading] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
-  const [errors, setErrors] = useState({});
+import React, { useState } from "react";
 
-  const validateForm = () => {
-    const newErrors = {};
-    if (!formData.firstName.trim()) newErrors.firstName = 'First name is required';
-    if (!formData.lastName.trim()) newErrors.lastName = 'Last name is required';
-    if (!formData.email.trim()) newErrors.email = 'Email is required';
-    else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Email is invalid';
-    if (!formData.phone.trim()) newErrors.phone = 'Phone number is required';
-    else if (!/^\+?[1-9]\d{9,11}$/.test(formData.phone.replace(/\s+/g, ''))) 
-      newErrors.phone = 'Please enter a valid phone number';
-    if (!formData.message.trim()) newErrors.message = 'Message is required';
-    return newErrors;
-  };
+const countries = [
+  { code: "+91", name: "India" },
+  { code: "+1", name: "USA" },
+  { code: "+44", name: "UK" },
+  { code: "+81", name: "Japan" },
+];
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-    // Clear error when user starts typing
-    if (errors[name]) {
-      setErrors(prev => ({
-        ...prev,
-        [name]: ''
-      }));
-    }
-  };
+const ContactForm = () => {
+  const [countryCode, setCountryCode] = useState("+91");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const validationErrors = validateForm();
-    
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
+    if (!firstName || !lastName || !email || !message) {
+      alert("Please fill out all required fields.");
       return;
     }
 
-    setLoading(true);
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      setSubmitted(true);
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        message: ''
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          email,
+          message,
+          countryCode,
+        }),
       });
+
+      if (response.ok) {
+        setStatus("success");
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setMessage("");
+      } else {
+        setStatus("error");
+      }
     } catch (error) {
-      console.error('Error submitting form:', error);
-    } finally {
-      setLoading(false);
+      setStatus("error");
     }
   };
 
-  const InputField = ({ label, name, type = 'text', placeholder, error }) => (
-    <div>
-      <label className="block text-sm mb-1 text-gray-600" htmlFor={name}>
-        {label}
-      </label>
-      <input
-        type={type}
-        id={name}
-        name={name}
-        value={formData[name]}
-        onChange={handleChange}
-        placeholder={placeholder}
-        className={`w-full px-3 py-2 border ${error ? 'border-red-500' : 'border-gray-200'} 
-          rounded-md focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-300
-          transition-colors ${loading ? 'bg-gray-50' : 'bg-white'}`}
-        disabled={loading}
-      />
-      {error && <p className="text-red-500 text-xs mt-1">{error}</p>}
-    </div>
-  );
-
   return (
-    <div className="max-w-6xl mx-auto p-8 bg-white">
-      <div className="text-center mb-12">
-        <h1 className="text-2xl font-normal mb-3">Contact us</h1>
-        <p className="text-lg text-gray-600">"Feel Free to Reach Out and Connect with Us"</p>
+    <div className="bg-[#FFFFFF]  px-8 py-12">
+
+    <div className="mt-20 w-full max-w-6xl mx-auto p-6  ">
+      <div className="text-center mb-8">
+        <h2 className="text-lg font-bold text-black-600">Contact us</h2>
+        <h1 className="text-3xl font-semibold mt-2 text-gray-800">
+          "Reach Out and Connect with Us"
+        </h1>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-12">
-        <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-6">
-          {submitted ? (
-            <div className="text-center py-8">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/>
-                </svg>
-              </div>
-              <h3 className="text-xl font-medium text-gray-900 mb-2">Thank you for reaching out!</h3>
-              <p className="text-gray-600 mb-6">We'll get back to you as soon as possible.</p>
-              <button
-                onClick={() => setSubmitted(false)}
-                className="text-blue-500 hover:text-blue-600 font-medium"
-              >
-                Send another message
-              </button>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <InputField
-                  label="First Name"
-                  name="firstName"
-                  placeholder="Enter your First Name"
-                  error={errors.firstName}
-                />
-                <InputField
-                  label="Last Name"
-                  name="lastName"
-                  placeholder="Enter your Last Name"
-                  error={errors.lastName}
-                />
-              </div>
+      {status === "success" && (
+        <p className="text-green-600 text-center mb-4">Message sent successfully!</p>
+      )}
+      {status === "error" && (
+        <p className="text-red-600 text-center mb-4">
+          Something went wrong. Please try again.
+        </p>
+      )}
 
-              <InputField
-                label="Email"
-                name="email"
+      <div className="grid md:grid-cols-[2fr,1fr] gap-12">
+        <div>
+          <form className="space-y-6" onSubmit={handleSubmit}>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label
+                  htmlFor="firstName"
+                  className="block text-sm font-medium text-gray-700 "
+                >
+                  First Name
+                </label>
+                <input
+                  id="firstName"
+                  type="text"
+                  placeholder="Enter Your First Name"
+                  className="w-full p-3 rounded-lg border border-gray-600 text-sm"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="lastName"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Last Name
+                </label>
+                <input
+                  id="lastName"
+                  type="text"
+                  placeholder="Enter Your Last Name"
+                  className="w-full p-3 rounded-lg border border-gray-600 text-sm"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  required
+                />
+              </div>
+            </div>
+
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Email
+              </label>
+              <input
+                id="email"
                 type="email"
                 placeholder="Enter your Email Address"
-                error={errors.email}
+                className="w-full p-3 rounded-lg border border-gray-600 text-sm"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
               />
+            </div>
 
-              <InputField
-                label="Phone no"
-                name="phone"
-                type="tel"
-                placeholder="+91"
-                error={errors.phone}
-              />
-
+            <div className="flex gap-2">
               <div>
-                <label className="block text-sm mb-1 text-gray-600">
-                  Message
+                <label
+                  htmlFor="countryCode"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Country Code
                 </label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={4}
-                  placeholder="Leave us a Message..."
-                  className={`w-full px-3 py-2 border ${errors.message ? 'border-red-500' : 'border-gray-200'} 
-                    rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-blue-100 
-                    focus:border-blue-300 transition-colors ${loading ? 'bg-gray-50' : 'bg-white'}`}
-                  disabled={loading}
-                />
-                {errors.message && (
-                  <p className="text-red-500 text-xs mt-1">{errors.message}</p>
-                )}
+                <select
+                  id="countryCode"
+                  className="w-32 p-3 rounded-lg border border-gray-100 text-sm"
+                  value={countryCode}
+                  onChange={(e) => setCountryCode(e.target.value)}
+                >
+                  {countries.map((country) => (
+                    <option key={country.code} value={country.code}>
+                      {country.code} {country.name}
+                    </option>
+                  ))}
+                </select>
               </div>
+              <div className="flex-1">
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Phone Number
+                </label>
+                <input
+                  id="phone"
+                  type="tel"
+                  placeholder="XXX-XX-XXXXX"
+                  className="w-full p-3 rounded-lg border border-gray-600 text-sm"
+                />
+              </div>
+            </div>
 
-              <button 
-                type="submit"
-                disabled={loading}
-                className={`w-full sm:w-auto px-6 py-2.5 rounded-md text-white
-                  ${loading ? 'bg-gray-400' : 'bg-black hover:bg-gray-800'} 
-                  transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900
-                  flex items-center justify-center`}
+            <div>
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium text-gray-700"
               >
-                {loading ? (
-                  <>
-                    <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
-                    </svg>
-                    Sending...
-                  </>
-                ) : 'Send Message'}
-              </button>
-            </form>
-          )}
+                Message
+              </label>
+              <textarea
+                id="message"
+                placeholder="Leave us a Message..."
+                rows={6}
+                className="w-full p-3 rounded-lg border border-gray-600 text-sm resize-none"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                required
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-gray-900 text-white py-3 rounded hover:bg-gray-800 transition-colors text-sm font-medium"
+            >
+              Send Message
+            </button>
+          </form>
         </div>
 
-        <div className="space-y-8">
-          <div>
-            <h2 className="text-lg font-medium mb-4">Contact</h2>
-            <div className="space-y-4">
-              <div className="flex items-center gap-3 text-gray-600 hover:text-gray-900 transition-colors">
-                <Phone className="w-5 h-5" />
-                <a href="tel:+919082574346" className="hover:underline">+91 9082574346</a>
-              </div>
-              <div className="flex items-center gap-3 text-gray-600 hover:text-gray-900 transition-colors">
-                <Mail className="w-5 h-5" />
-                <a href="mailto:info@truskill.in" className="hover:underline">info@truskill.in</a>
-              </div>
-              <div className="flex items-center gap-3 text-gray-600">
-                <MapPin className="w-5 h-5" />
-                <span>Andheri, Mumbai.</span>
-              </div>
+        <div className="space-y-6">
+          <h3 className="font-bold">Contact</h3>
+          <div className="space-y-4">
+            <div className="flex items-center gap-2">
+              <span className="text-sm">📞 +91 9082574346</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-sm">✉️ info@truskill.in</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-sm">📍 Andheri, Mumbai.</span>
             </div>
           </div>
 
-          <div className="bg-gray-50 p-6 rounded-lg border border-gray-100">
-            <blockquote className="text-gray-600 italic text-lg">
+          <div className="mt-12 pt-6 border-t border-gray-100">
+            <blockquote className="text-gray-600 italic text-sm">
               "Being a student is easy. Learning requires actual work."
             </blockquote>
-            <p className="text-sm text-gray-500 mt-3">- William Crawford</p>
+            <p className="text-gray-500 text-sm mt-2">— William Crawford</p>
           </div>
         </div>
       </div>
     </div>
+    </div>
   );
-}
+};
+
+export default ContactForm;
