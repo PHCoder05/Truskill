@@ -2,18 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Define global variables for colors */
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500&family=Poppins:wght@400;600&family=Inter:wght@400;600&display=swap');
@@ -21,6 +9,4 @@
 /* Apply global font styles */
 body {
   font-family: 'Work Sans', sans-serif;
-  background-color: var(--background);
-  color: var(--foreground);
 }
