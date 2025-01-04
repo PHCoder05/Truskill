@@ -18,7 +18,7 @@ function Home7() {
   </div>
 
    
-<div className="flex justify-center items-center  bg-gray-100 mb-10">
+<div className="flex justify-center items-center  mb-10">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Testimonial 1 */}
         <div className="relative w-48 h-48 rounded-lg overflow-hidden shadow-lg">

@@ -4,7 +4,7 @@ function Kys2() {
   return (
     <div className="lg:flex py-8 lg:justify-center space-y-5 lg:space-y-0">
  
- <div className=" md:w-1/4 mx-4 p-6 bg-[#F8F8F8] rounded-lg shadow-md">
+ <div className=" md:w-1/3 mx-4 p-6 bg-[#F8F8F8] rounded-lg shadow-md">
         <div className='space-y-2 mb-16'>
         <p className="text-[#0B5E41] text-xs">Why should you take the KYS test?</p>
         <p className="text-black text-lg font-bold">Identify your strengths &
@@ -23,7 +23,7 @@ function Kys2() {
 
       </div>
  
-     <div className="md:w-1/4 mx-4 p-6 bg-[#F8F8F8] rounded-lg shadow-md">
+     <div className="md:w-1/3 mx-4 p-6 bg-[#F8F8F8] rounded-lg shadow-md">
      <div className='space-y-2'>
         <p className="text-[#0B5E41] text-xs">Why should you take the KYS test?</p>
         <p className="text-black text-lg font-bold">Identify your strengths &
@@ -37,7 +37,7 @@ function Kys2() {
 
     </div>
 
-    <div className="md:w-1/4 mx-4 p-6 bg-[#FFF8F2] rounded-lg shadow-md">
+    <div className="md:w-1/3 mx-4 p-6 bg-[#FFF8F2] rounded-lg shadow-md">
     <p className="text-[#0B5E41] text-xs">Why should you take the KYS test?</p>
 <div className='mt-2'>
         <div className="flex items-start mb-4 space-x-2">
