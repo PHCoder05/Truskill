@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
         <meta name="description" content={metadata.description} />
         <link rel="icon" href="/favicon.ico" />
         </head>
-      <body className="bg-gray-200 text-foreground font-work font-regular">
+      <body className=" text-foreground font-work font-regular">
         {/* Navbar */}
         <Navbar />
 
