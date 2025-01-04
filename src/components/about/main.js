@@ -10,7 +10,7 @@ const main = () => {
             <div className="w-12 h-px bg-gray-400 my-4"></div>
           </div>
         </div>
-        <h1 class="text-4xl  text-gray-800  font-poppins font-semibold">
+        <h1 className="text-4xl  text-gray-800  font-poppins font-semibold">
 
           <span>TruSkill Academy</span>
           <span className="text-emerald-600 font-poppins font-semibold"> is your valuable partner for</span>
