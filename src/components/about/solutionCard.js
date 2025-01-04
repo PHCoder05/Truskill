@@ -32,7 +32,7 @@ export default function SolutionCards() {
     ];
   
     return (
-      <div className="py-16 px-8 bg-gray-100">
+      <div className="py-16 px-8 bg-[#ffffff]">
         <h2 className="text-center text-3xl font-bold text-gray-800 mb-12">
           Solution For
         </h2>

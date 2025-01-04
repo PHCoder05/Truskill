@@ -41,9 +41,9 @@ const features = [
 
 const KeyFeatures = () => {
   return (
-    <div className="py-16 bg-gray-50">
+    <div className="py-16 bg-[#FFFFFF]">
       <div className="container mx-auto px-4 lg:px-20">
-        <h2 className="text-center text-3xl font-semibold text-gray-800 mb-12">
+        <h2 className="text-center text-3xl font-poppins font-semibold text-gray-800 mb-12">
           Key Features
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

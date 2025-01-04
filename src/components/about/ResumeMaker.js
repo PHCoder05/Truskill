@@ -2,8 +2,8 @@ import React from 'react';
 
 const ResumeMaker = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-16">
-      <div className="grid md:grid-cols-2 gap-12 md:gap-16">
+    <div className="bg-[#FFFFFF] px-8 py-12">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* Text Content */}
         <div className="space-y-6">
           <h1 className="text-3xl font-bold">Truskill AI Resume Maker</h1>

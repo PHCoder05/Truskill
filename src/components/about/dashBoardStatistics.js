@@ -23,10 +23,10 @@ const DashboardStatistics = () => {
   };
 
   return (
-    <div className="py-16 bg-gray-50">
+    <div className="py-16 bg-[#FFFFFF]">
       {/* Dashboard Preview Section */}
       <div className="container mx-auto px-4 lg:px-20">
-        <h2 className="text-center text-3xl font-semibold text-gray-800 mb-8">
+        <h2 className="text-center text-3xl  text-gray-800 mb-8 font-poppins font-semibold">
           Preview of Our Dashboard
         </h2>
         <div className="flex justify-center gap-6 flex-wrap">

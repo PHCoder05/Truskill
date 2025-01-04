@@ -12,6 +12,7 @@ import SolutionCard from '@/src/components/about/solutionCard';
 import KeyFeatures from '@/src/components/about/keyFeature';
 import DashboardStatistics from '@/src/components/about/dashBoardStatistics';
 import FAQWithScrollingLogos from '@/src/components/about/faqWithScroll';
+import MagicLoop from '@/src/components/about/magicLoop';
 
 const TruSkillAcademy = () => {
   return (
@@ -25,6 +26,7 @@ const TruSkillAcademy = () => {
       <ResumeMaker/>
       <MockInterview/>
       <CollegeAssistanceModule/>
+      <MagicLoop/>
       <SolutionCard/>
       <KeyFeatures/>
       <DashboardStatistics/>

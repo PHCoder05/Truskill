@@ -11,6 +11,16 @@ module.exports = {
       backgroundImage: {
         'hero-pattern': "url('/images/about/hero-pattern.jpeg')",
       },
+      fontFamily: {
+        work: ["'Work Sans'", "sans-serif"],
+        poppins: ["'Poppins'", "sans-serif"],
+        inter: ["'Inter'", "sans-serif"],
+      },
+      fontWeight: {
+        regular: "400",
+        medium: "500",
+        semibold: "600",
+      },
     },
   },
   plugins: [],

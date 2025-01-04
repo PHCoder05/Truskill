@@ -2,10 +2,10 @@ import React from 'react';
 
 const AboutTruskill = () => {
   return (
-    <section className="max-w-7xl mx-auto px-8 py-20">
-      <div className="grid md:grid-cols-2 gap-16">
+<section className="max-w-7xl mx-auto px-8 py-20 mix-blend-color-burn rounded-lg border-4 border-gray-300">
+<div className="grid md:grid-cols-2 gap-16">
         <div>
-          <h1 className="text-[32px] font-large font-bold text-gray-900 mb-8">
+          <h1 className="text-[32px] font-large font-poppins font-semibold text-gray-900 mb-8">
             About Truskill Technology
           </h1>
           <div className="space-y-6 text-gray-600 leading-relaxed">
