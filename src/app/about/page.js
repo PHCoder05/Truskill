@@ -24,12 +24,12 @@ const TruSkillAcademy = () => {
       <TechLibrary/>
       <ProgressTracker/>
       <ResumeMaker/>
-      <MockInterview/>
-      <CollegeAssistanceModule/>
+      <MockInterview/> 
+     <CollegeAssistanceModule/>
       <MagicLoop/>
       <SolutionCard/>
       <KeyFeatures/>
-      <DashboardStatistics/>
+      <DashboardStatistics/> 
       <FAQWithScrollingLogos/>
       
     </>
