@@ -13,31 +13,21 @@ const CoursePage = () => {
   useEffect(() => {
     if (!slug) return;
     const fetchCourseData = async () => {
-      setLoading(true); // Ensure loading state is set at the start of a fetch
-      setError(null); // Reset any previous errors
       try {
         const response = await fetch(
           `http://localhost:1337/api/course-pages/${slug}?populate=*`
         );
 
         if (!response.ok) {
-          // Handle different status codes with specific error messages
-          if (response.status === 404) {
-            throw new Error("Course not found.");
-          }
-          if (response.status === 500) {
-            throw new Error("Server error. Please try again later.");
-          }
           throw new Error(`Error: ${response.statusText}`);
         }
 
         const data = await response.json();
         setCourse(data.data);
       } catch (err) {
-        // Handle network or any other error
-        setError(`Failed to fetch course details: ${err.message}`);
+        setError(err.message);
       } finally {
-        setLoading(false); // Set loading to false when fetch finishes
+        setLoading(false);
       }
     };
 
@@ -45,18 +35,7 @@ const CoursePage = () => {
   }, [slug]);
 
   if (loading) return <p>Loading...</p>;
-  if (error)
-    return (
-      <div>
-        <p className="text-red-500">{error}</p>
-        {/* Provide a retry button to attempt fetching again */}
-        <button
-          className="mt-4 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300"
-          onClick={() => window.location.reload()}>
-          Retry
-        </button>
-      </div>
-    );
+  if (error) return <p>Error: {error}</p>;
 
   const data = [
     {
@@ -91,6 +70,8 @@ const CoursePage = () => {
     },
   ];
 
+  console.log(course); // Log the course data to see the structure
+
   return (
     <section>
       {course ? (
@@ -107,6 +88,14 @@ const CoursePage = () => {
               <div className="mb-11">
                 <h1>{course.category}</h1>
               </div>
+
+              {/* <div className="mb-4">
+          
+            <img
+              src={course.image.url}
+              alt={course.title}
+            />
+          </div> */}
             </div>
           </div>
 
@@ -130,7 +119,7 @@ const CoursePage = () => {
             {data.map((item) => (
               <div key={item.id} className="flex p-2 space-x-3">
                 <div>
-                  <img src={item.image} alt={item.title}></img>
+                  <img src={item.image}></img>
                 </div>
                 <div>{item.title}</div>
                 <div>{item.info}</div>
