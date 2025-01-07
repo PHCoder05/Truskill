@@ -35,7 +35,12 @@ const Card = ({ cardItem }) => {
         )}
         {cardItem.price && (
           <p className="text-gray-700 mt-2">
-            <strong>Price:</strong> ${cardItem.price.current}
+            <strong>Price:</strong> ${cardItem.price}
+          </p>
+        )}
+ {cardItem.description && (
+          <p className="text-gray-700 mt-2">
+            <strong>Price:</strong> ${cardItem.description}
           </p>
         )}
 
