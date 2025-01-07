@@ -1,35 +1,71 @@
-// app/course/page.js
+"use client";
 
-import React from 'react';
+import { gql, useQuery } from '@apollo/client';
+import Card from '@/src/components/Card/Card';
+
+const GET_LANDING_PAGES = gql`
+  query {
+    landingPages {
+      blocks {
+        ... on ComponentBlocksRow {
+          card {
+            image {
+              url
+            }
+            
+            heading
+            description
+            duration
+            category
+            rating
+            reviews
+            price
+            slug
+          }
+        }
+      }
+    }
+  }
+`;
 
 const Course = () => {
-  // Mock course data
-  const courses = [
-    { id: 1, title: 'React Basics', description: 'Learn the fundamentals of React.' },
-    { id: 2, title: 'Next.js Advanced', description: 'Dive deep into Next.js features.' },
-    { id: 3, title: 'JavaScript Essentials', description: 'Master core JavaScript concepts.' },
-  ];
+  const { loading, error, data } = useQuery(GET_LANDING_PAGES);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
+
+  const landingPages = data.landingPages;
 
   return (
-    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
-      <h1 style={{ textAlign: 'center', marginBottom: '20px' }}>Courses</h1>
-      <ul style={{ listStyleType: 'none', padding: 0 }}>
-        {courses.map((course) => (
-          <li
-            key={course.id}
-            style={{
-              marginBottom: '20px',
-              padding: '15px',
-              border: '1px solid #ddd',
-              borderRadius: '5px',
-              boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
-            }}
-          >
-            <h2 style={{ margin: '0 0 10px' }}>{course.title}</h2>
-            <p style={{ margin: 0 }}>{course.description}</p>
-          </li>
-        ))}
-      </ul>
+    <div>
+      <h1 className="text-4xl font-bold text-center text-black mt-28">
+        Start Your Journey with our Courses
+      </h1>
+
+
+      <div className="max-w-7xl mx-auto mt-8 px-4">
+  <input
+    type="text"
+    placeholder="Search for a course..."
+    className="w-full sm:w-3/4 md:w-1/2 lg:w-1/3 p-3 rounded-lg border border-gray-300 shadow-md focus:outline-none focus:ring-2 focus:ring-[#3FC89E] focus:border-[#3FC89E] transition duration-200"
+  />
+</div>
+
+      <section className="p-6">
+        <div className="max-w-7xl mx-auto">
+      
+          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+          
+            {landingPages.map((page) => (
+              page.blocks.map((block) => (
+                block.card && block.card.map((cardItem, cardIndex) => (
+                  <Card key={cardIndex} cardItem={cardItem} />
+                ))
+              ))
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

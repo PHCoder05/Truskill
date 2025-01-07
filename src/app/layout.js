@@ -1,5 +1,7 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import ApolloWrapper from "../components/ApolloWrapper/ApolloWrapper";
+
 import "/styles/globals.css";
 // import { Head } from "next/document";
 
@@ -26,7 +28,7 @@ export default function RootLayout({ children }) {
         <Navbar />
 
         {/* Main Content */}
-        <main>{children}</main>
+        <ApolloWrapper>{children}</ApolloWrapper>
 
         {/* Footer */}
         <Footer />
