@@ -58,7 +58,7 @@ const [twitter,setTwitter]=useState("https://www.facebook.com");
 const [email,setEmail]=useState("https://www.facebook.com");
 const [whatsapp,setWhatsapp]=useState("https://www.facebook.com")
   useEffect(() => {
-    if (!slug) return; 
+    if (!slug) return;
     const fetchCourseData = async () => {
       try {
         const response = await fetch(
@@ -97,33 +97,35 @@ const [whatsapp,setWhatsapp]=useState("https://www.facebook.com")
       id: "1",
       image: "/images/perCoursePage/icon1.jpg",
       title: "duration",
-      info:course.duration
+      info: course.duration,
     },
     {
       id: "2",
       image: "/images/perCoursePage/icon2.png",
       title: "course_level",
-      info:course.level
+      info: course.level,
     },
     {
       id: "3",
       image: "/images/perCoursePage/icon3.png",
       title: "students_enrolled",
-      info:course.students_enrolled
+      info: course.students_enrolled,
     },
     {
       id: "4",
       image: "/images/perCoursePage/icon4.png",
       title: "language",
-      info:course.language
+      info: course.language,
     },
     {
       id: "5",
       image: "/images/perCoursePage/icon5.png",
       title: "subtitle_language",
-      info:course.subtitle_language
-    }
+      info: course.subtitle_language,
+    },
   ];
+
+  console.log(course); // Log the course data to see the structure
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(window.location.href)

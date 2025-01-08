@@ -1,8 +1,9 @@
 "use client";
 
-import { gql, useQuery } from '@apollo/client';
-import Card from '@/src/components/Card/Card';
+import { gql, useQuery } from "@apollo/client";
+import Card from "@/src/components/Card/Card";
 
+// GraphQL Query
 const GET_LANDING_PAGES = gql`
   query {
     landingPages {
@@ -12,7 +13,6 @@ const GET_LANDING_PAGES = gql`
             image {
               url
             }
-            
             heading
             description
             duration
@@ -31,6 +31,11 @@ const GET_LANDING_PAGES = gql`
 const Course = () => {
   const { loading, error, data } = useQuery(GET_LANDING_PAGES);
 
+  // Debugging output
+  console.log("Loading:", loading);
+  console.log("Error:", error);
+  console.log("Data:", data);
+
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
@@ -42,7 +47,6 @@ const Course = () => {
       <h1 className="text-4xl font-bold text-center text-black mt-28">
         Start Your Journey with our Courses
       </h1>
-
 
       <div className="max-w-7xl mx-auto mt-8 px-4 flex justify-center">
   <div className="flex items-center w-full sm:w-3/4 md:w-1/2 lg:w-1/3">
@@ -64,16 +68,17 @@ const Course = () => {
 
       <section className="p-6">
         <div className="max-w-7xl mx-auto">
-      
           <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-5">
-          
-            {landingPages.map((page) => (
-              page.blocks.map((block) => (
-                block.card && block.card.map((cardItem, cardIndex) => (
-                  <Card key={cardIndex} cardItem={cardItem} />
+            {landingPages.map((page, pageIndex) =>
+              page.blocks?.map((block, blockIndex) =>
+                block.card?.map((cardItem, cardIndex) => (
+                  <Card
+                    key={`${pageIndex}-${blockIndex}-${cardIndex}`}
+                    cardItem={cardItem}
+                  />
                 ))
-              ))
-            ))}
+              )
+            )}
           </div>
         </div>
       </section>

@@ -1,6 +1,6 @@
 export default function MockInterview() {
   return (
-    <div className="bg-[#FFFFFF] px-6 md:px-8 py-16">
+    <div className="bg-[#FFFFFF] px-6 md:px-8 py-16 overflow-x-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-y-12 md:gap-x-12 items-center">
         {/* Right Section (Text Content) */}
         <div className="space-y-6 p-8 bg-white rounded-lg ">
