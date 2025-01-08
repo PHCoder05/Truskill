@@ -1,12 +1,50 @@
 "use client";
 
-
+import { gql, useQuery } from '@apollo/client';
 import { useRouter,useParams } from "next/navigation"; 
 import { useState,useEffect } from "react";
+
+import Link from 'next/link';
+// const GET_COURSE_BY_SLUG = gql`
+//   query GetCoursePages {
+//     coursePages {
+//       title
+//       description
+//       rating
+//       price {
+//         original
+//       }
+//       language
+//       level
+//       students_enrolled
+//       image {
+//         url
+//       }
+//     }
+//   }
+// `;
+
 
 
 const CoursePage = () => {
   const {slug} = useParams();
+
+  // const { loading, error, data } = useQuery(GET_COURSE_BY_SLUG, {
+  //   variables: { slug },  // Pass the slug to the GraphQL query
+  //   skip: !slug,  // Skip the query if slug is not available yet
+  // });
+
+  const renderStars = (rating) => {
+    const stars = [];
+    for (let i = 1; i <= 5; i++) {
+      stars.push(
+        <span key={i} className={i <= rating ? "text-yellow-500" : "text-gray-300"}>
+          ★
+        </span>
+      );
+    }
+    return stars;
+  };
 
 
 
@@ -14,6 +52,11 @@ const CoursePage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   
+
+  const [facebook,setFacebook]=useState("https://www.facebook.com");
+const [twitter,setTwitter]=useState("https://www.facebook.com");
+const [email,setEmail]=useState("https://www.facebook.com");
+const [whatsapp,setWhatsapp]=useState("https://www.facebook.com")
   useEffect(() => {
     if (!slug) return; 
     const fetchCourseData = async () => {
@@ -28,6 +71,12 @@ const CoursePage = () => {
 
         const data = await response.json();
         setCourse(data.data); 
+        if (data.data.share_links) {
+          setFacebook(data.data.share_links.facebook || facebook);
+          setTwitter(data.data.share_links.twitter || twitter);
+          setEmail(data.data.share_links.email || email);
+          setWhatsapp(data.data.share_links.whatsapp || whatsapp);
+        }
       } catch (err) {
         setError(err.message);
       } finally {
@@ -39,11 +88,11 @@ const CoursePage = () => {
   }, [slug]);
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
+  if (error) return <p>Error: {error.message}</p>;
 
+  // const course = data.coursePage;
 
-
-  const data = [
+  const data1 = [
     {
       id: "1",
       image: "/images/perCoursePage/icon1.jpg",
@@ -76,16 +125,25 @@ const CoursePage = () => {
     }
   ];
 
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText(window.location.href)
+      .then(() => alert('Link copied to clipboard!'))
+      .catch((err) => alert('Failed to copy link: ' + err));
+  };
   return (
-    <section>
+    <section className="lg:mx-44 mx-3 mb-10">
   
-      {course ? (
-        <div className="lg:flex">
-           <div className="w-1/2">
+      
+        <div className="lg:flex justify-between">
+           <div className="w-2/3">
                    <div className="max-w-4xl mx-auto px-4 mt-24">
           <h1 className="text-3xl font-bold mb-4">{course.title}</h1>
           <div className="mb-4">
-            <strong>Rating:</strong> {course.rating}
+          {course.rating && (
+          <div className="flex items-center mt-2">
+            {renderStars(Math.round(course.rating))} {/* Convert rating to whole number */}
+          </div>
+        )}
           </div>
         
           <p className="mb-2">{course.description}</p>
@@ -96,13 +154,14 @@ const CoursePage = () => {
            
           </div>
        
-          {/* <div className="mb-4">
+          <div className="mb-4">
           
             <img
-              src={course.image.url}
+              src={course.image.formats.thumbnail}
+
               alt={course.title}
             />
-          </div> */}
+          </div>
                   </div>
           </div>
         
@@ -113,15 +172,17 @@ const CoursePage = () => {
                     <p className="text-2xl">
                      <strong>{course.price.currency}{course.price.current}</strong> 
                      </p>
-                     <p className="ml-7"> {course.price.currency}{course.price.original} 
+                     <p className="ml-7 line-through"> {course.price.currency}{course.price.original} 
                      </p>
               </div>
 
-               {data.map((item)=>( <div key={item.id} className="flex p-2 space-x-3">
+               {data1.map((item)=>( <div key={item.id} className="flex p-2 justify-between">
+                <div className='flex space-x-3'>
                  <div>
                     <img src={item.image}></img>
                   </div> 
                    <div>{item.title}</div>
+                   </div>
                      <div>{item.info}</div>
                 </div>))}
      
@@ -129,10 +190,10 @@ const CoursePage = () => {
 
     {/* Buttons */}
                    <div className="mt-6 flex flex-col gap-4">
-                       <button className="w-full bg-[#EFFFE8] text-white py-2 px-4 rounded-md hover:bg-[#EFFFE8] transition duration-300">
+                       <button className="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700  transition duration-300">
                          Add to Cart
                        </button>
-                         <button className="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 transition duration-300">
+                         <button className="w-full bg-[#EFFFE8] text-green-700 py-2 px-4 rounded-md hover:bg-[#cbf1ba] transition duration-300">
                            Buy Now
                       </button>
                      </div>
@@ -147,18 +208,65 @@ const CoursePage = () => {
         ))}
         </ol>
       </div>
+      <div className="w-full mx-auto mt-8 px-4 flex justify-between items-center bg-gray-100 p-4 rounded-lg">
+  {/* Copy Link Section */}
+  <button
+    className="bg-white text-black px-2 py-1 rounded-lg shadow-md hover:bg-[#366053] transition duration-200"
+    onClick={handleCopyLink}
+  >
+    Copy Link
+  </button>
+
+  {/* Social Media Icons */}
+  <div className="flex space-x-4">
+    <Link
+      href={facebook}
+      target="_blank"
+      rel="noopener noreferrer"
+      
+    >
+      <img src='/images/perCoursePage/facebook.png'></img>
+    </Link>
+
+    <Link
+      href={twitter}
+      target="_blank"
+      rel="noopener noreferrer"
+      
+    >
+ <img src='/images/perCoursePage/Twitter.png'></img>
+    </Link>
+
+    <Link
+      href={email}
+      target="_blank"
+      rel="noopener noreferrer"
+     
+    >
+      <img src='/images/perCoursePage/Email.png'></img>
+    </Link>
+    <Link
+      href={whatsapp}
+      target="_blank"
+      rel="noopener noreferrer"
+     
+    >
+      <img src='/images/perCoursePage/Whatsapp.png'></img>
+    </Link>
+
+  </div>
+</div>
+
     
 
 
-  </div>    
+          </div>    
           </div>
           
        
 
         
-      ): (
-        <p>Course not found.</p>
-      )}
+      
     </section>
   );
 };

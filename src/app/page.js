@@ -18,7 +18,7 @@ function page() {
     <Home4/>
     <Home5/>
     <Home6/>
-  <Home7/>
+    <Home7/>
     </div>
     </div>
   )
