@@ -41,16 +41,17 @@ const Course = () => {
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
-  const landingPages = data.landingPages;
+  const landingPages = data?.landingPages || [];
 
   // Filter cards based on search query
   const filteredLandingPages = landingPages.map((page) => ({
     ...page,
-    blocks: page.blocks.map((block) => ({
+    blocks: page.blocks?.map((block) => ({
       ...block,
-      card: block.card.filter((cardItem) =>
-        cardItem.heading?.toLowerCase().includes(searchQuery.toLowerCase())
-      ),
+      card:
+        block.card?.filter((cardItem) =>
+          cardItem.heading?.toLowerCase().includes(searchQuery.toLowerCase())
+        ) || [],
     })),
   }));
 
@@ -73,7 +74,10 @@ const Course = () => {
           {/* Search Button */}
           <button
             type="button"
-            className="bg-black text-white px-4 py-3 rounded-r-lg shadow-md hover:bg-gray-800 transition duration-200">
+            className="bg-black text-white px-4 py-3 rounded-r-lg shadow-md hover:bg-gray-800 transition duration-200"
+            onClick={() => setSearchQuery("")}>
+            {" "}
+            {/* Clear the search query */}
             Search
           </button>
         </div>
