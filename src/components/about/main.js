@@ -21,10 +21,7 @@ const main = () => {
         </h1>
 
         <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-          We are dedicated to assisting students in their academic and 
-          professional pursuits, offering guidance and support to help them 
-          navigate the competitive placement landscape and stand out from 
-          the crowd.
+        We transform student potential into professional excellence by providing the best campus placement training programs and skill enhancements along with professional career guidance.
         </p>
 
         <div className="grid md:grid-cols-2 gap-12 mt-16">

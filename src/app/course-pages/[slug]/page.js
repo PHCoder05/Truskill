@@ -136,8 +136,8 @@ const [whatsapp,setWhatsapp]=useState("https://www.facebook.com")
     <section className="lg:mx-44 mx-3 mb-10">
   
       
-        <div className="lg:flex justify-between">
-           <div className="w-2/3">
+        <div className="lg:flex lg:justify-between">
+           <div className="lg:w-2/3">
                    <div className="max-w-4xl mx-auto px-4 mt-24">
           <h1 className="text-3xl font-bold mb-4">{course.title}</h1>
           <div className="mb-4">
@@ -147,6 +147,14 @@ const [whatsapp,setWhatsapp]=useState("https://www.facebook.com")
           </div>
         )}
           </div>
+          <div className="mb-4">
+          
+          <img
+            src={`http://localhost:1337${course.image.formats.thumbnail.url}`}
+             className='w-full p-3'
+            alt={course.title}
+          />
+        </div>
         
           <p className="mb-2">{course.description}</p>
           
@@ -156,15 +164,8 @@ const [whatsapp,setWhatsapp]=useState("https://www.facebook.com")
            
           </div>
        
-          <div className="mb-4">
-          
-            <img
-              src={course.image.formats.thumbnail}
-
-              alt={course.title}
-            />
+        
           </div>
-                  </div>
           </div>
         
          <div className="w-full lg:w-1/3 bg-white p-4 rounded-lg shadow-md border border-gray-200 mt-28">

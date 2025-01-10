@@ -3,7 +3,7 @@
 import React from 'react'
 
 function page() {
-const searchText=logical
+const searchText="logical"
     const GET_LANDING_PAGES = gql`
   query GetLandingPages($searchText: String!) {
     landingPages(filters: { blocks: { card: { heading: { contains: ${searchText} } } } }) {

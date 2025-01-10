@@ -7,7 +7,7 @@ import Home4 from "../components/Home/Home4";
 import Home5 from "../components/Home/Home5";
 import Home6 from "../components/Home/Home6";
 import Home7 from "../components/Home/Home7";
-
+import ScrollToTopButton from "../components/ScrollToTopButton";
 function page() {
   return (
     <div>
@@ -19,6 +19,7 @@ function page() {
     <Home5/>
     <Home6/>
     <Home7/>
+    <ScrollToTopButton className="justify-right"/>
     </div>
     </div>
   )
