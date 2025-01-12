@@ -21,28 +21,21 @@ const main = () => {
         </h1>
 
         <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-          We are dedicated to assisting students in their academic and 
-          professional pursuits, offering guidance and support to help them 
-          navigate the competitive placement landscape and stand out from 
-          the crowd.
+        We transform student potential into professional excellence by providing the best campus placement training programs and skill enhancements along with professional career guidance.
         </p>
 
         <div className="grid md:grid-cols-2 gap-12 mt-16">
           <div className="space-y-4">
             <h2 className="text-4xl font-large  text-gray-800 font-poppins font-semibold">Mission</h2>
             <p className="text-gray-600 leading-relaxed">
-              Our mission is to cultivate critical thinking, problem-solving, creativity, 
-              and effective communication skills in our students. Through our unique 
-              coursework, expert instructions, and best-in-class facilities.
+            Our mission is to cultivate problem-solving abilities, creativity, and effective communication through world-class innovative learning strategies.
             </p>
           </div>
 
           <div className="space-y-4">
             <h2 className="text-4xl font-large text-gray-800 font-poppins font-semibold">Vision</h2>
             <p className="text-gray-600 leading-relaxed">
-              To empower every student to achieve their full potential in this 
-              competitive and contemporary world by providing thorough 
-              guidance and support.
+            Empower students to prepare their critical thinking and enhance cognitive index to achieve the best campus placements in today’s professional landscape
             </p>
           </div>
         </div>

@@ -10,7 +10,7 @@ const ResumeMaker = () => {
           
           <p className="text-gray-600">Fact - Recruiters spend an average of 10 seconds reviewing a resume. Even the average ATS score is as low as 50-55.</p>
           
-          <p className="text-gray-700">Have a professional resume with Truskill AI that will personalize it to your profile and the job you are applying for, giving you an impressive first impression. You can now have an aligned resume with 80+ ATS Score under 30 seconds with good attention to kills and experiences that will capture the eye of your recruiters. You don’t need to spend much time on the format or wording since our AI ensures it will provide you with the best outcome with respect to any industry’s requirements.</p>
+          <p className="text-gray-700">Top MNCs do not review your resume manually. The higher the ATS score of your resume, the higher the chance of recruitment. The resume is the most vital part of the professional world. Our AI Resume Maker will help you achieve an ATS score of 80+ within seconds. We curate your resume and align it with specific job requirements to enhance your job application success rate. We ensure to provide high ATS score resumes with customized formats to stand out in job applications and capture recruiter attention</p>
 
           <ul className="space-y-3 pt-4">
             <li className="flex items-center gap-2">

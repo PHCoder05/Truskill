@@ -11,10 +11,7 @@ export default function MockInterview() {
             Fact - 70%: The best way to prepare for an interview is to practice, practice, practice.
           </p>
           <p className="text-gray-700 leading-relaxed mb-6">
-            Practice makes perfect. Our AI-powered mock interviews simulate the real interview experience.
-            You can experience an interview crafted based on your profile and the job you are applying for,
-            giving you an opportunity to refine your answers, build confidence, and gain insight into your performance.
-            Get personalized feedback and identify areas for improvement.
+          It's true when they say, “Practice makes a man perfect.” The key to acing an interview is practice. With our AI-powered mock interviews, we provide diverse and realistic interview simulations along with an interview preparation platform. With an adaptive mock interview platform, it will help students work on their soft skills through regular feedback-driven interview training. Students will build their confidence through practice interviews and refine their answers for better interview outcomes.
           </p>
           
           {/* List of Features with Icons */}

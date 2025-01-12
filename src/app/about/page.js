@@ -13,6 +13,7 @@ import KeyFeatures from '@/src/components/about/keyFeature';
 import DashboardStatistics from '@/src/components/about/dashBoardStatistics';
 import FAQWithScrollingLogos from '@/src/components/about/faqWithScroll';
 import MagicLoop from '@/src/components/about/magicLoop';
+import ScrollToTopButton from '@/src/components/ScrollToTopButton';
 
 const TruSkillAcademy = () => {
   return (
@@ -31,6 +32,7 @@ const TruSkillAcademy = () => {
       <KeyFeatures/>
       <DashboardStatistics/> 
       <FAQWithScrollingLogos/>
+      <ScrollToTopButton/>
       
     </>
   );

@@ -23,13 +23,13 @@ const Card = ({ cardItem }) => {
     setShowFullDescription((prev) => !prev);
   };
   return (
-    <div className="card bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+    <div className="card bg-white p-4 rounded-2xl shadow-md  hover:shadow-lg transition-shadow duration-300">
       {/* Card Image */}
       {cardItem.image && (
         <img
           src={`http://localhost:1337${cardItem.image.url}`}
           alt={cardItem.heading}
-          className="w-full h-40 object-cover rounded-t-lg p-2"
+          className="w-full h-40 object-cover rounded-t-2xl p-2"
         />
       )}
         {cardItem.category && (

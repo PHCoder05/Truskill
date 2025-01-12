@@ -10,17 +10,14 @@ export default function TechLibrary() {
               Fact - Students with structured plan and direction have a 3 times higher Success Rate.
             </p>
             <p className="text-gray-700 mb-4">
-              Let's dive deep into truskills' highly curated collection of resources which are
-              structured and designed to make you an exam master. By leveraging technology we have
-              analyzed over 2,000 exam papers, pinpointing the most critical concepts and question
-              types. As a result, you'll be able to focus all your energy on the most high-yield areas
-              and practice strategically.
+            Success rate depends on a structured plan. Our tech-powered resource library aims to provide such structured plans to our students. With our curated learning resources and intelligent study strategy, we aim to provide a 3X success rate with student-focused improvement and a data-driven learning approach.
             </p>
             <ul className="text-gray-700 mb-6 space-y-2">
-              <li>• 10,000+ practice questions classified in terms of difficulty, type, and exam readiness</li>
-              <li>• 500+ in-depth video tutorials covering complex concepts</li>
-              <li>• AI-powered recommendations for targeted study</li>
-              <li>• Company-specific preparation materials to help you land your dream role</li>
+              <li>• 2000+ exam paper analysis</li>
+              <li>• High-yield learning strategy</li>
+              <li>• Precision study resources</li>
+              <li>• Technology-enabled learning</li>
+              <li>•	Focused exam preparation</li>
             </ul>
             <p className="text-sm text-gray-600 italic">
               "Tell me and I forget. Teach me and I remember. Involve me and I learn." -{" "}

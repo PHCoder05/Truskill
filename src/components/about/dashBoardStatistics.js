@@ -2,7 +2,8 @@
 import { useState } from 'react';
 import Slider from 'react-slick';
 import Image from 'next/image';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaChevronLeft, FaChevronRight,} from 'react-icons/fa';
+import { FaCircleChevronLeft, FaCircleChevronRight } from "react-icons/fa6";
 
 export default function Home() {
   const images = [
@@ -26,13 +27,13 @@ export default function Home() {
       setCurrentIndex(next); // Update the current index when the slide changes
     },
     prevArrow: (
-      <div className="slick-arrow slick-prev absolute top-1/2 left-0 transform -translate-y-1/2 z-10 text-3xl text-gray-700 cursor-pointer opacity-50 hover:opacity-100 transition-opacity">
-        <FaChevronLeft />
+      <div className="slick-arrow slick-prev absolute top-1/2 left-0 transform -translate-y-1/2 z-10 text-3xl text-black cursor-pointer transition-opacity">
+        <FaCircleChevronLeft/>
       </div>
     ),
     nextArrow: (
       <div className="slick-arrow slick-next absolute top-1/2 right-0 transform -translate-y-1/2 z-10 text-3xl text-gray-700 cursor-pointer opacity-50 hover:opacity-100 transition-opacity">
-        <FaChevronRight />
+       <FaCircleChevronRight/>
       </div>
     ),
     responsive: [
@@ -47,7 +48,7 @@ export default function Home() {
   };
 
   return (
-    <div className="p-6 bg-[#f9f9f9] overflow-x-hidden">
+    <div className="p-6 overflow-x-hidden bg-gray-800">
       <h1 className="text-3xl font-semibold text-center mb-10 text-gray-800">Preview of Our Dashboard</h1>
       <div className="relative w-full max-w-6xl mx-auto">
         <Slider {...settings}>

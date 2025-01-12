@@ -10,17 +10,11 @@ const AboutTruskill = () => {
           </h1>
           <div className="space-y-6 text-gray-600 leading-relaxed">
             <p>
-              Our highly tech-enabled system offers comprehensive student 
-              assistance, allowing us to understand individual strengths and 
-              weaknesses. Our experienced mentors and career advisors collaborate
-            </p>
-            <p>to create customized strategies for maximum success.</p>
+            At Truskill Academy, our technology-driven learning solutions 
+           offer a student assistance system, educational mentorship, and career advisory services  </p>
             <p>
-              Our unique, one-of-a-kind model has been tested and proven to 
-              improve students' cognitive index up to three times in PI 
-              Assessments,
-            </p>
-            <p>making it a unique and effective solution for skill development.</p>
+            This system not only prepares but also enhances cognitive skill development,
+            which is reflected in advanced student performances.</p>
           </div>
         </div>
 

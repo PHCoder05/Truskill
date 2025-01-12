@@ -9,11 +9,11 @@ import Kys3 from '@/src/components/kys/Kys3'
 import Kys4 from '@/src/components/kys/Kys4'
 import KYS7 from '@/src/components/kys/kys7'
 import FAQPage from '@/src/components/kys/kys8'
-
+import ScrollToTopButton from '@/src/components/ScrollToTopButton'
 const Kys = () => {
   return (
     <div className="w-full bg-white">
-      <div className="max-w-7xl mx-auto px-6 md:px-20 lg:px-40">
+      <div className="mx-auto px-6 md:px-14 lg:px-28">
         {/* Section 1 */}
         <Kys1 />
         <Kys2 />
@@ -29,6 +29,7 @@ const Kys = () => {
         <KYS7 />
         <FAQPage />
       </div>
+      <ScrollToTopButton/>
     </div>
   )
 }
