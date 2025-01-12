@@ -5,6 +5,7 @@ import { useRouter,useParams } from "next/navigation";
 import { useState,useEffect } from "react";
 
 import Link from 'next/link';
+import ScrollToTopButton from '@/src/components/ScrollToTopButton';
 // const GET_COURSE_BY_SLUG = gql`
 //   query GetCoursePages {
 //     coursePages {
@@ -155,6 +156,19 @@ const [whatsapp,setWhatsapp]=useState("https://www.facebook.com")
             alt={course.title}
           />
         </div>
+
+        {course.video_preview?.url && (
+  <div className="mb-4">
+    <video
+      src={`http://localhost:1337${course.video_preview.url}`}
+      className="w-full p-3"
+      controls
+      alt={course.title}
+    >
+      Your browser does not support the video tag.
+    </video>
+  </div>
+)}
         
           <p className="mb-2">{course.description}</p>
           
@@ -168,7 +182,7 @@ const [whatsapp,setWhatsapp]=useState("https://www.facebook.com")
           </div>
           </div>
         
-         <div className="w-full lg:w-1/3 bg-white p-4 rounded-lg shadow-md border border-gray-200 mt-28">
+         <div className="w-full lg:w-1/3 bg-white p-4 rounded-lg shadow-md border border-gray-200 mt-28 h-auto">
               {/* Course Details */}
    
               <div className=" flex  justify-center border border-gray-200 p-4">
@@ -201,7 +215,7 @@ const [whatsapp,setWhatsapp]=useState("https://www.facebook.com")
                       </button>
                      </div>
 
-        <div className="p-2 border border-gray-200 mt-4">
+      {course.features &&( <div className="p-2 border border-gray-200 mt-4">
         <h2 className="text-xl mb-4">This Course Includes</h2>
         <ol className="list-disc list-inside">
         {course.features.map((feature, index) => (
@@ -211,6 +225,8 @@ const [whatsapp,setWhatsapp]=useState("https://www.facebook.com")
         ))}
         </ol>
       </div>
+      )
+}
       <div className="w-full mx-auto mt-8 px-4 flex justify-between items-center bg-gray-100 p-4 rounded-lg">
   {/* Copy Link Section */}
   <button
@@ -269,7 +285,7 @@ const [whatsapp,setWhatsapp]=useState("https://www.facebook.com")
        
 
         
-      
+      <ScrollToTopButton/>
     </section>
   );
 };

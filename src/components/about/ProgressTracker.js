@@ -26,13 +26,7 @@ export default function ProgressTracker() {
             likely to achieve their academic goals.
           </p>
           <p className="text-gray-700 leading-relaxed mb-6">
-            Stay organized and motivated with Truskill's Progress Tracker. It’s
-            your personalized Progress Tracker which analyzes your performance
-            based on different statistics and gives you a clear picture of your
-            readiness towards the directed goal. Set clear company-specific
-            goals, identify areas to improve, and monitor your progress every
-            step of the way. Our planner helps you stay on track, even when the
-            going gets tough.
+          With structured plans and goals, achieving academic goals tends to increase effectively. Our progress tracker analyse overall exam preparation effectiveness by tracking performances at every stage of learning and helps students visualize strong and weak areas in their studies. It provides customized study plans with personalized learning strategies, giving each student a clear and goal-oriented study planner curated as per their learning potential.
           </p>
           <ul className="list-disc list-inside space-y-2 text-gray-700 mb-6">
             <li>Analyze your overall preparation.</li>

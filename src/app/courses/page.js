@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { gql, useQuery } from "@apollo/client";
 import Card from "@/src/components/Card/Card";
+import ScrollToTopButton from "@/src/components/ScrollToTopButton";
 
 // GraphQL Query
 const GET_LANDING_PAGES = gql`
@@ -95,6 +96,7 @@ const Course = () => {
           </div>
         </div>
       </section>
+      <ScrollToTopButton/>
     </div>
   );
 };

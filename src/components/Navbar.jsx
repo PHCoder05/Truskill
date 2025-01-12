@@ -75,7 +75,7 @@ const Navbar = () => {
             </a>
           ))}
           <div className="mt-4 space-y-2">
-            <button className="w-full px-4 py-2 text-sm font-medium text-gray-700 hover:text-emerald-600 transition-colors">
+            <button   className="w-full px-4 py-2 text-sm font-medium text-gray-700 hover:text-emerald-600 transition-colors">
               Dashboard
             </button>
             <button className="w-full px-4 py-2 text-sm font-medium text-white bg-emerald-600 rounded-md hover:bg-emerald-700 transition-colors">

@@ -4,68 +4,90 @@ function Kys2() {
   return (
     <div className="lg:flex py-8 lg:justify-center space-y-5 lg:space-y-0">
  
- <div className=" md:w-1/3 mx-4 p-6 bg-[#F8F8F8] rounded-lg shadow-md">
+ {/* <div className=" lg:w-1/3 mx-4 p-6 bg-[#F8F8F8] rounded-lg shadow-md">
         <div className='space-y-2 mb-16'>
-        <p className="text-[#0B5E41] text-xs">Why should you take the KYS test?</p>
-        <p className="text-black text-lg font-bold">Identify your strengths &
+        <p className="text-[#0B5E41] text-sm font-semibold">Why should you take the KYS test?</p>
+        <p className="text-[#4E4E4E] text-2xl font-semibold  font-poppins">Identify your strengths &
         blindspots</p>
-        <p className="text-black text-sm mb-60">Understand which product skills you haveand take roles suited to your strengths. Build
+        <p className="text-black text-base mb-60">Understand which product skills you haveand take roles suited to your strengths. Build
     your confidence and perform well.</p>
     </div>
-    {/* <div className="px-3 py-2 bg-white text-[#0B5E41] rounded-full  text-center mb-1 border-[#00B5E41]">
-    <Link href="*" >See Sample Skill Result</Link>
-      </div> */}
-      <div className="px-3 py-2 bg-white text-[#0B5E41] rounded-full text-center mb-1 border border-[#0B5E41]">
-  <Link href="*" className="text-[#0B5E41] hover:underline">
+   
+      <div className="px-3 py-2 bg-white text-[#0B5E41] rounded-full text-center mb-1 border-2 border-[#0B5E41]">
+  <Link href="*" className="text-[#0B5E41] ">
     See Sample Skill Result
   </Link>
 </div>
 
-      </div>
+      </div> */}
  
-     <div className="md:w-1/3 mx-4 p-6 bg-[#F8F8F8] rounded-lg shadow-md">
+  <div className="lg:w-1/3 mx-4 p-6 bg-[#F8F8F8] rounded-lg shadow-md flex flex-col justify-between">
+    {/* Content Section */}
+    <div className="space-y-2">
+      <p className="text-[#0B5E41] text-sm font-semibold">
+        Why should you take the KYS test?
+      </p>
+      <p className="text-[#4E4E4E] text-2xl font-semibold font-poppins">
+        Identify your strengths & blindspots
+      </p>
+      <p className="text-black text-base">
+        Understand which product skills you have and take roles suited to your strengths. Build
+        your confidence and perform well.
+      </p>
+    </div>
+
+    {/* Link Section */}
+    <div className="mt-5 lg:mt-auto px-3 py-2 bg-white text-[#0B5E41] rounded-full text-center border-2 border-[#0B5E41]">
+      <Link href="*" className="text-[#0B5E41]">
+        See Sample Skill Result
+      </Link>
+    </div>
+  </div>
+
+ 
+     <div className="lg:w-1/3 mx-4 p-6 bg-[#F8F8F8] rounded-lg shadow-md">
      <div className='space-y-2'>
-        <p className="text-[#0B5E41] text-xs">Why should you take the KYS test?</p>
-        <p className="text-black text-lg font-bold">Identify your strengths &
+        <p className="text-[#0B5E41] text-sm font-bold">Why should you take the KYS test?</p>
+        <p className="text-[#4E4E4E] text-2xl font-semibold font-poppins">Identify your strengths &
         blindspots</p>
-        <p className="text-black text-sm mb-60">Understand which product skills you haveand take roles suited to your strengths. Build
+        <p className="text-black text-base mb-60">Understand which product skills you haveand take roles suited to your strengths. Build
     your confidence and perform well.</p>
     </div>
-    <div>
-      <img src='images/kys/kys3.png'></img>
+    <div className='content-center flex justify-center'>
+      <img src='images/kys/kys3.png' className='mx-auto'></img>
     </div>
 
     </div>
 
-    <div className="md:w-1/3 mx-4 p-6 bg-[#FFF8F2] rounded-lg shadow-md">
-    <p className="text-[#0B5E41] text-xs">Why should you take the KYS test?</p>
-<div className='mt-2'>
-        <div className="flex items-start mb-4 space-x-2">
+    <div className="lg:w-1/3 mx-4 p-6 bg-[#FFF8F2] rounded-lg shadow-md">
+    <p className="text-[#0B5E41] text-sm font-bold">Why should you take the KYS test?</p>
+<div className='mt-3 space-y-7'>
+        <div className="flex items-start space-x-2">
           <img src='/images/kys/icon1.png'></img>
           <div>
-            <p className="text-[##A7A7A7] text-sm">Text Format</p>
-            <p className="text-black font-bold text-sm">49 Questions </p>
+            <p className="text-[#A7A7A7] text-base">Text Format</p>
+            <p className="text-black font-semibold text-lg">49 Questions </p>
           </div>
         </div>
-        <div className="flex items-start mb-4 space-x-2">
+        <div className="flex items-start  space-x-2">
         <img src='/images/kys/icon2.png'></img>
           <div>
-            <p className="text-[##A7A7A7] text-sm">Question Format</p>
-            <p className="text-sm text-black  font-bold">Case Studies as MCQ's</p>
+            <p className="text-[#A7A7A7] text-base">Question Format</p>
+            <p className=" text-black  font-semibold text-lg">Case Studies as MCQ's</p>
           </div>
         </div>
-        <div className="flex items-start mb-4 space-x-2">
+        <div className="flex items-start space-x-2">
         <img src='/images/kys/icon3.png'></img>
           <div>
-            <p className="text-[##A7A7A7] text-sm">Duration </p>
-            <p className="text-sm text-black  font-bold">50 minutes</p>
+            <p className="text-[#A7A7A7] text-base">Duration </p>
+            <p className=" text-black  font-semibold text-lg">50 minutes</p>
           </div>
         </div>
         <div className="flex items-start space-x-2">
         <img src='/images/kys/icon4.png'></img>
           <div>
-            <p className="text-[##A7A7A7] text-sm">Level</p>
-            <p className="text-sm text-black  font-bold">Beginner as well as
+            <p className="text-[#A7A7A7]text-base">Level</p>
+            <p className=" text-black  font-semibold text-lg">Beginner as well as
             Intermediate </p>
           </div>
         </div>

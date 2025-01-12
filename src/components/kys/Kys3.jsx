@@ -8,10 +8,10 @@ function Kys3() {
    
     
 <div className="w-full md:w-1/2 p-5 bg-white">
-  <p className="text-[##0B5E41]">
+  <p className="text-[#3B9B72] text-lg">
     Trusted by
   </p>
-  <h2 className="text-xl md:text-2xl font-bold mb-4 mt-4">The KYS Test is built
+  <h2 className="text-xl md:text-4xl font-bold mb-4 mt-4">The KYS Test is built
 with insights from top PMs at
 Google, Amazon & Airbnb</h2>
   <p className="text-sm md:text-base text-gray-600">

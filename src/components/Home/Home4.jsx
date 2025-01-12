@@ -7,7 +7,7 @@ function Home4() {
 
 {/* Left Section: Without Truskill */}
 <div className="flex flex-col items-center w-full max-w-md p-6 rounded-lg space-y-10">
-  <button className="mb-4 px-6 py-2 text-black rounded-full border-4">
+  <button className="mb-4 px-6 py-2 text-black rounded-full border-4 text-lg">
     Without Truskill
   </button>
   <img
@@ -15,7 +15,7 @@ function Home4() {
     alt="Without Truskill"
     className="w-full h-auto mb-4 rounded-lg"
   />
-  <ol className="list-disc pl-5 text-black space-y-3 text-lg">
+  <ol className="list-disc pl-5 text-black space-y-3 text-xl ">
     <li>Information Overload with No Structure & Direction, makes you Overwhelmed.</li>
     <li>No tool to Track Progress and Set Goals.</li>
     <li>Lack of Required modern Tech Solution.</li>
@@ -25,7 +25,7 @@ function Home4() {
 
 {/* Right Section: With Truskill */}
 <div className="flex flex-col items-center w-full max-w-md p-6  rounded-lg space-y-10">
-  <button className="mb-4 px-6 py-2 bg-black text-white rounded-full border-4">
+  <button className="mb-4 px-6 py-2 bg-black text-white rounded-full border-4 text-lg">
     With Truskill
   </button>
   <img
@@ -33,7 +33,7 @@ function Home4() {
     alt="With Truskill"
     className="w-full h-auto mb-4 rounded-lg"
   />
-  <ol className="list-disc pl-5 space-y-3 text-black text-lg">
+  <ol className="list-disc pl-5 space-y-3 text-black text-xl">
     <li>Lacking direction? Stuck with a random study plan that's not working?</li>
     <li>Unlock Truskill as your True Companion.</li>
     <li>Grow faster & head toward the goal in a real demonstrated manner.</li>

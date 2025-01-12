@@ -21,7 +21,7 @@ function Home1() {
           <img
             src='/Home/Home1.png'
             alt="Description"
-            className="w-full h-auto rounded-lg shadow-lg"
+            className="w-full h-auto rounded-lg "
           />
         </div>
       </div>

@@ -25,36 +25,39 @@ const PersonalisedDashboard = () => {
         <div className="order-1 md:order-2 space-y-6">
           <h1 className="text-3xl font-bold">Personalised Dashboard</h1>
           
-          <p className="text-gray-600">Our highly tech-enabled system offers comprehensive student assistance, allowing us to understand individual strengths and</p>
+          <p className="text-gray-600">Our student assistance, enabled by advanced technology, offers adaptive learning approaches, customized exam preparation, along with a performance tracking system that helps each student understand their best potential and strengths.</p>
           
-          <p className="text-gray-600">Fact - Personalized Dashboard learning has been shown to increase student engagement by up to 70%.</p>
           
           <h2 className="text-xl text-[#0B5E41]">About,</h2>
           
-          <p className="text-gray-600">Your main control center for efficient exam preparation. You have access to specially picked videos, practice questions, and mock tests to address your needs and your abilities. Stay on top of your learning, carry out performance analysis, and be successful in exams.</p>
+          <p className="text-gray-600">Each student has the main control to personalize their resources for exam preparation.</p>
           
-          <p className="text-gray-600">to create customized strategies for maximum success.</p>
+          <p className="text-gray-600">They have video learning platforms targeting various subjects and a mock test simulation to stay updated with their preparation for campus placements and training.</p>
           
-          <p className="text-gray-600">Our unique, one-of-a-kind model has been tested and proven to improve students' cognitive index up to three times in PI Assessments,</p>
+          <p className="text-gray-600">A comprehensive student learning solution also provides an engaging platform among the students.</p>
           
-          <p className="text-gray-600">making it a unique and effective solution for skill development.</p>
+          <p className="text-gray-600">Our technology-enabled system has been proven to improve cognitive index up to 3X in PI assessments, unlocking student potential for success with the help of our intelligent educational support.</p>
 
           <ul className="space-y-3 pt-4">
             <li className="flex items-center gap-2">
               <div className="w-1 h-1 bg-[#006241] rounded-full"/>
-              <span className="text-[#006241]">Access to 100+ hours of targeted video content</span>
+              <span className="text-[#006241]">	100+ hours of video content</span>
             </li>
             <li className="flex items-center gap-2">
               <div className="w-1 h-1 bg-[#006241] rounded-full"/>
-              <span className="text-[#006241]">11,000+ practice questions categorized by difficulty and topic</span>
+              <span className="text-[#006241]">11,000+ practice questions</span>
             </li>
             <li className="flex items-center gap-2">
               <div className="w-1 h-1 bg-[#006241] rounded-full"/>
-              <span className="text-[#006241]">150+ mock tests simulating real exam conditions</span>
+              <span className="text-[#006241]">150+ mock test platform</span>
             </li>
             <li className="flex items-center gap-2">
               <div className="w-1 h-1 bg-[#006241] rounded-full"/>
-              <span className="text-[#006241]">Personalized progress tracking and performance analysis</span>
+              <span className="text-[#006241]">Difficulty-based learning</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <div className="w-1 h-1 bg-[#006241] rounded-full"/>
+              <span className="text-[#006241]">Comprehensive exam preparation</span>
             </li>
           </ul>
         </div>
